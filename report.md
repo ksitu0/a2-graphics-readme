@@ -31,9 +31,9 @@ The minimap is in the corner. To implement the minimap, we render the scene from
 
 **Screenshots:**
 - Toggling between rendering from light and user's viewpoint: 
-  ![[Viewpoints-1.mov]]
+  ![](Viewpoints-1.mov)
 - Minimap:
-  ![[Viewpoints-2.png]]
+  ![](Viewpoints-2.png)
 
 ### 2. Advanced Shading (PBR) with Normal Mapping
 We used PBR shading equations given in the lecture and in other rendering resources online [0]. The PBR model takes in several input parameters, which we can also use textures as input for. We also implemented normal mapping to perturb the normals of the object based on a normal map texture.
@@ -43,8 +43,10 @@ This makes the object look more realistic, even for Blinn Phong shading.
 [0]: https://learnopengl.com/PBR/Theory
 
 **Screenshots:**
-- ![[normal map.png]]
-- ![[normal map 1.png]]
+
+![a](<normal map.png>)
+
+- ![](<normal map 1.png>)
 
 ### 3. Material Textures
 PBR rendering depends on several input parameters, like metallic and roughness. We can use textures to represent these parameters. We also implemented ambient occlusion and normal mapping. We downloaded a free-use texture from the Internet that provides all these values as images. This is shown on the metal sphere. 
@@ -63,9 +65,9 @@ We implemented shader `brdf_frag.glsl` with helpers and functions `getBaseColor`
 
 **Screenshots:**
 - pbr side
-  ![[pbr 1.png]]
+  ![](<pbr 1.png>)
 - pbr front
-  ![[pbr 2.png]]
+  ![](<pbr 2.png>)
   
 ### 4. Environment Mapping
 We implemented environment mapping using a cubemap. We used a free-use HDRI image from the Internet. The HDRI image uses an equirectangular projection,
@@ -75,11 +77,11 @@ To do this, we simply render a massive cube around the player. In the fragment s
 
 **Screenshots:**
 - perspective 1 
-  ![[env map2.png]]
+  ![](<env map2.png>)
 - perspective 2 
-  ![[env map 3.png]]
+  ![](<env map 3.png>)
 - perspective 3
-  ![[env map1.png]]
+  ![](<env map1.png>)
 
 
 ### 5. Smooth Paths (Bézier Curves) with *Constant Speed Bézier Curve Movement*
@@ -92,9 +94,9 @@ Class `PathAnimation` manages movement timing and automatically wraps around at 
 
 **Screenshots:**
 - Smooth path, constant speed
-  ![[Bezier-1.mov]]
+  ![](Bezier-1.mov)
 - Path rendering off
-  ![[Bezier-2.png]]
+  ![](Bezier-2.png)
 
 ### 6. Hierarchical Transformations
 Editable robot arm composed of multiple segments that can be manipulated through rotation and scaling transformations. Each segment's transformation affects all subsequent segments in the chain.
@@ -104,43 +106,43 @@ Class `RobotSegment` manages individual arm segments with dimensions and rotatio
 
 **Screenshots:**
 - Editing a parent's length
-  ![[Hierar-1.mov]]
+  ![](Hierar-1.mov)
 - Rotated same parent
-  ![[Hierar-2.png]]
+  ![](Hierar-2.png)
 
 ### 7. Multiple Light Source Shadows
 We simply adapted code from Assignment 1 Part 1 that handles shadows. Instead of having just one shadow map, we have a shadow map for each light source. We render the scene from the light's perspective and store the depth values in a texture. We then render the scene from the camera's perspective and use the shadow map to determine if a fragment is in shadow or not. If a fragment is in shadow, then we simply exclude that light from being applied to that fragment.
 
 **Screenshots:**
-- two lights ![[shadow-2-lights.png]]
-- three lights ![[shadow-3-lights.png]]
+- two lights ![](shadow-2-lights.png)
+- three lights ![](shadow-3-lights.png)
 
 ### 8. Post-processing Effects
 We did a very simple glow effect around the minimap to make it more prominent. The glow effect is implemented in the fragment shader, which reserves the border of the quad as the "glow", and the center as the "minimap". The glow is simply a linear interpolation between bright yellow on the inside and transparent on the outside border.
 
 **Screenshots:**
 - minimap glow 1
-  ![[glow and minimap.png]]
+  ![](<glow and minimap.png>)
 - minimap glow 2
-  ![[Viewpoints-2.png]]
+  ![](Viewpoints-2.png)
 
 ### 9. Procedural Water Surface
 There is a sheet of wavy water below the main objects of the scene. We built a massive vertex mesh grid that covers the surface of the water. We pass into the vertex shader an array of waves (with amplitude, phase, speed, and sharpness levels) that are added together to create the final wave height. We then use the wave height to displace the vertex positions in the y-direction. We also pass in the time to the shader to animate the waves.
 
 **Screenshots:**
 - water
-  ![[water1.png]]
+  ![](water1.png)
 - more water
-  ![[water2.png]]
+  ![](water2.png)
 
 ### 10. Ambient Occlusion
 We implemented ambient occlusion with the PBR shader. It takes in an ambient occlusion texture that we use to darken the areas where light is less likely to reach. We use the ambient occlusion texture to adjust the ambient lighting term in the PBR shader.
 
 **Screenshots:**
 - behind
-  ![[ambient occlusion1.png]]
+  ![](<ambient occlusion1.png>)
 - front
-  ![[ambient occlusion 2.png]]
+  ![](<ambient occlusion 2.png>)
 
 ## Demo Video
-![[demovideo.mov]] 
+![](demovideo.mov])
