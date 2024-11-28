@@ -143,6 +143,3 @@ We implemented ambient occlusion with the PBR shader. It takes in an ambient occ
   ![](<ambient occlusion1.png>)
 - front
   ![](<ambient occlusion 2.png>)
-
-## Demo Video
-![](demovideo.mov])
